@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -17,4 +19,48 @@ time, mark, audio, video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+}
+
+body,
+.translate {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+}
+
+header {
+    height: 300px;
+}
+
+h1 {
+    margin: 100px auto 30px;
+    font-size: 24px;
+}
+
+h2 {
+    margin: 15px auto;
+}
+
+.pig-fence {
+    background-image: url("img/pig-latin.jpeg");
+    width: 300px;
+    height: 150px;
+    background-size: contain;
+    margin: auto;
+    border-radius: 2px;
+}
+
+main {
+    width: 100%;
+    background-color: rgb(115, 200, 225);
+    min-height: 500px;
+    padding: 30px 0px;
+}
+
+.pig-latin-input {
+    width: 475px;
+}
+
+.translate {
+    font-weight: bold;
+    
 }

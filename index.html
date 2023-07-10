@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Pig Latin Translator</title>
-</head>
-<body>
-    
+  </head>
+  <body>
+    <header>
+      <h1>Pig Latin Translator</h1>
+      <div class="pig-fence"></div>
+      <h2>A Javascript tool to translate words and phrases into pig latin.</h2>
+    </header>
+    <main>
+      <label for="pig-latin-input">
+        <h2>Please type whatever you would like translated into Pig Latin here:</h2>
+      </label>
+      <input class="pig-latin-input" name="pig-latin-input" type="text" />
+      <br /><br />
+      <button class="translate">Translate</button>
+    </main>
     <script src="scripts.js"></script>
-</body>
+  </body>
 </html>
