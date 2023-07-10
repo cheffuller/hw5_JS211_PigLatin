@@ -59,12 +59,10 @@ const pigLatin = (word) => {
   return evaluateString(stringScrubbed);
 };
 
-// the first function called in the program to get an input from the user
-// to run the function use the command: node main.js
-// to close it ctrl + C
-const getPrompt = () => {
-  rl.question("word ", (answer) => {
-    console.log(pigLatin(answer));
-    getPrompt();
-  });
-};
+const translateButton = document.querySelector(".translate");
+translateButton.addEventListener("click", function (e) {
+  const inputString = document.querySelector(".pig-latin-input").value;
+  const outputDiv = document.querySelector(".pig-latin-output");
+  outputDiv.innerHTML = pigLatin(inputString);
+  console.log(pigLatin(inputString));
+});

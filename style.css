@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;500&display=swap');
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -24,6 +24,7 @@ time, mark, audio, video {
 body,
 .translate {
     font-family: 'Raleway', sans-serif;
+    font-weight: 300;
     text-align: center;
 }
 
@@ -52,15 +53,31 @@ h2 {
 main {
     width: 100%;
     background-color: rgb(115, 200, 225);
-    min-height: 500px;
+    min-height: 400px;
     padding: 30px 0px;
+    color: white;
+    font-weight: 500;
 }
 
 .pig-latin-input {
-    width: 475px;
+    width: 495px;
 }
 
 .translate {
-    font-weight: bold;
-    
+    /* font-weight: bold; */
+    font-size: 12px;
+    background-color:  white;
+    border: none;
+    padding: 6px;
+    border-radius: 3px;
+}
+
+.translate:hover {
+    background-color:rgb(240, 225, 210);
+}
+
+.pig-latin-output {
+ 
+    font-size: 24px;
+    padding: 40px 100px;
 }
