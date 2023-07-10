@@ -20,6 +20,9 @@ const evaluateWord = (word) => {
   const VOWELS = ["a", "e", "i", "o", "u"];
   const wordArray = Array.from(word);
   switch (true) {
+    case (word === ''):
+      return "Please enter a word or phrase!"
+      break;
     case VOWELS.includes(wordArray[0]):
       wordArray.push("y");
       return convertWord(0, wordArray);
@@ -34,7 +37,7 @@ const evaluateWord = (word) => {
       return convertWord(3, wordArray);
       break;
     default:
-      return "There are a lot of consonants at the beginning of this word!";
+      return convertWord(4, wordArray);
   }
 };
 
@@ -60,9 +63,8 @@ const pigLatin = (word) => {
 };
 
 const translateButton = document.querySelector(".translate");
-translateButton.addEventListener("click", function (e) {
+translateButton.addEventListener("click", function () {
   const inputString = document.querySelector(".pig-latin-input").value;
   const outputDiv = document.querySelector(".pig-latin-output");
   outputDiv.innerHTML = pigLatin(inputString);
-  console.log(pigLatin(inputString));
 });
