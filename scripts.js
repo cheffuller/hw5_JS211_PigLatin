@@ -1,18 +1,22 @@
-// function to trim whitespace from both ends and convert to lowercase
-const scrubInput = (input) => input.trim().toLowerCase();
-
-// function to join the wordArray (an array of individual letters) into one string
-const joinWord = (wordArray) => wordArray.join("");
-
 // function to convert original word into pig latin by moving the appropriate letters to the end of the word
 // and adding "ay" to the end of the string
+// Also checks for punctuation at the end of the word and if present removes the punctuation, then adds it back to the end
+// after converting
 const convertWord = (index, wordArray) => {
+  const punctuation = /\p{P}/gu;
+  let removedPunctuation = '';
+  if (punctuation.test(wordArray[wordArray.length - 1])) {
+    removedPunctuation = wordArray.pop();
+  }
   for (let i = 0; i < index; i++) {
     const firstLetter = wordArray.shift();
     wordArray.push(firstLetter);
   }
   wordArray.push("a", "y");
-  return joinWord(wordArray);
+  if (removedPunctuation) {
+    wordArray.push(removedPunctuation);
+  }
+  return wordArray.join("");
 };
 
 // function to evaluate the word to determine the letters (if any) to move to the end of the word
@@ -58,13 +62,17 @@ const evaluateString = (word) => {
 // function that calls the scrubbing function and begins the string evaluation
 // it also returns the translated result
 const pigLatin = (word) => {
-  const stringScrubbed = scrubInput(word);
+  const stringScrubbed = word.trim().toLowerCase();
   return evaluateString(stringScrubbed);
 };
 
+// main body of code
+// assigns a "click" event listener to the translate button and runs
+// the input string through the pigLatin function which returns the output string
 const translateButton = document.querySelector(".translate");
 translateButton.addEventListener("click", function () {
   const inputString = document.querySelector(".pig-latin-input").value;
   const outputDiv = document.querySelector(".pig-latin-output");
+  outputDiv.style.border = "1px solid white";
   outputDiv.innerHTML = pigLatin(inputString);
 });
